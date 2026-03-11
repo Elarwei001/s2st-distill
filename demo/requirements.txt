@@ -1,0 +1,11 @@
+# Demo dependencies
+gradio>=4.0.0
+numpy>=1.24.0
+
+# Audio processing
+scipy>=1.10.0
+
+# Optional: for full functionality
+# torch>=2.1.0
+# torchaudio>=2.1.0
+# onnxruntime>=1.16.0

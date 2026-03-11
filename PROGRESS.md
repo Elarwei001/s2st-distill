@@ -14,8 +14,8 @@ Implement and test the S2ST distillation pipeline with 4 language pairs:
 
 | Phase | Status | Started | Completed | Notes |
 |-------|--------|---------|-----------|-------|
-| 1. Environment Setup | 🟡 In Progress | 2026-03-11 22:50 | - | AHA setting up |
-| 2. Dataset Preparation | ⚪ Pending | - | - | CoVoST 2 + CVSS |
+| 1. Environment Setup | 🟢 Completed | 2026-03-11 22:50 | 2026-03-11 23:10 | Virtual env, PyTorch 2.10, SeamlessM4T-v2-large loaded (1.8B params) |
+| 2. Dataset Preparation | 🟡 In Progress | 2026-03-11 23:10 | - | CoVoST 2 + CVSS |
 | 3. Base Model Loading | ⚪ Pending | - | - | SeamlessM4T-Small |
 | 4. Language Pruning | ⚪ Pending | - | - | 4 language pairs |
 | 5. Knowledge Distillation | ⚪ Pending | - | - | ~10 epochs each |
@@ -92,7 +92,12 @@ Implement and test the S2ST distillation pipeline with 4 language pairs:
 
 ## 🚨 Issues & Blockers
 
-_(None yet)_
+### Phase 1 Notes
+- Used SeamlessM4T-v2-large (1.8B params) instead of Small (281M) as Small version not available
+- Loaded model with some UNEXPECTED/MISSING weights - normal for cross-version loading
+- MPS (Metal) acceleration available on macOS
+
+_(No active blockers)_
 
 ---
 
