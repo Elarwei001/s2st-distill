@@ -34,6 +34,32 @@ Take a large multilingual S2ST model (e.g., SeamlessM4T with 100+ languages) and
 | Voice Naturalness | MOS 3.5+ | Mean Opinion Score (1-5 scale) |
 | Voice Similarity | > 0.75 | Cosine similarity of speaker embeddings |
 
+## 🎮 Try the Demo
+
+Test the distilled models with our web interface:
+
+```bash
+# Clone and install
+git clone https://github.com/Elarwei001/s2st-distill.git
+cd s2st-distill
+pip install -r demo/requirements.txt
+
+# Run the demo
+python demo/app.py
+
+# Open http://localhost:7860 in your browser
+```
+
+**Features:**
+- 🎙️ Record audio from microphone
+- 📁 Upload audio files
+- 🌐 Choose translation direction (EN↔ZH, ZH↔FR)
+- 🔊 Instant playback of translated speech
+
+See [demo/README.md](demo/README.md) for more details.
+
+---
+
 ## 🚀 Quick Start
 
 ### Installation
@@ -79,6 +105,10 @@ distiller.export_tflite("model.tflite")      # Android
 
 ```
 s2st-distill/
+├── demo/                    # 🎮 Web UI Demo
+│   ├── app.py               # Gradio web interface
+│   ├── requirements.txt     # Demo dependencies
+│   └── README.md            # Demo documentation
 ├── docs/                    # Documentation
 │   ├── TECHNICAL_SPEC.md    # Detailed technical specification
 │   ├── ARCHITECTURE.md      # Model architecture overview
@@ -94,6 +124,11 @@ s2st-distill/
 │   ├── train.py             # Training script
 │   ├── evaluate.py          # Evaluation script
 │   └── benchmark.py         # Latency benchmark
+├── models/                  # Trained models (after distillation)
+│   ├── en_zh/               # English → Chinese
+│   ├── zh_en/               # Chinese → English
+│   ├── zh_fr/               # Chinese → French
+│   └── fr_zh/               # French → Chinese
 ├── tests/                   # Unit tests
 ├── examples/                # Example notebooks
 ├── requirements.txt
