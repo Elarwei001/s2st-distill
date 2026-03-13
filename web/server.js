@@ -292,7 +292,7 @@ const server = http.createServer(async (req, res) => {
         
         const runTranslate = () => {
           const py = spawn('/tmp/s2st-distill/s2st_env/bin/python', [
-            '/tmp/s2st-distill/cascade/translate_cascade_fast.py',
+            '/tmp/s2st-distill/cascade/translate_offline.py',
             wavPath,
             outputPath
           ]);
